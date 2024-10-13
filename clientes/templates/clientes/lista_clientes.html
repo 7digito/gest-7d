@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+
+{% block title %}Lista de Clientes{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h1>Lista de Clientes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>NIF</th>
+                <th>Morada</th>
+                <th>Código Postal</th>
+                <th>Localidade</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.nif }}</td>
+                <td>{{ cliente.morada }}</td>
+                <td>{{ cliente.codigo_postal }}</td>
+                <td>{{ cliente.localidade }}</td>
+                <td>{{ cliente.telefone }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.website }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
